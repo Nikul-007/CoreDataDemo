@@ -13,6 +13,8 @@ class UserCell: UITableViewCell {
     @IBOutlet var firstNameLabel : UILabel!
     @IBOutlet var lastNameLabel : UILabel!
     @IBOutlet var avtarImageView : UIImageView!
+    @IBOutlet var mainView : UIView!
+
     var dataArray : UserModel!{
         didSet{
             self.firstNameLabel.text = dataArray.firstName

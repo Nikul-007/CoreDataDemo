@@ -18,6 +18,7 @@
 		ECEF9989241CB38C0022675F /* CoreDataDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9988241CB38C0022675F /* CoreDataDemoUITests.swift */; };
 		ECEF9997241CD64D0022675F /* DisplayDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9996241CD64D0022675F /* DisplayDataVC.swift */; };
 		ECEF9999241CD6840022675F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9998241CD6840022675F /* UserCell.swift */; };
+		ECEF999B241D03260022675F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF999A241D03260022675F /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		ECEF998A241CB38C0022675F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECEF9996241CD64D0022675F /* DisplayDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataVC.swift; sourceTree = "<group>"; };
 		ECEF9998241CD6840022675F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		ECEF999A241D03260022675F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				ECEF9967241CB38A0022675F /* ViewController.swift */,
 				ECEF9996241CD64D0022675F /* DisplayDataVC.swift */,
 				ECEF9998241CD6840022675F /* UserCell.swift */,
+				ECEF999A241D03260022675F /* Helper.swift */,
 				ECEF9969241CB38A0022675F /* Main.storyboard */,
 				ECEF996F241CB38C0022675F /* Assets.xcassets */,
 				ECEF9971241CB38C0022675F /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECEF9968241CB38A0022675F /* ViewController.swift in Sources */,
+				ECEF999B241D03260022675F /* Helper.swift in Sources */,
 				ECEF996E241CB38A0022675F /* CoreDataDemo.xcdatamodeld in Sources */,
 				ECEF9999241CD6840022675F /* UserCell.swift in Sources */,
 				ECEF9964241CB38A0022675F /* AppDelegate.swift in Sources */,

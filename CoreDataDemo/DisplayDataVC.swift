@@ -22,10 +22,11 @@ class DisplayDataVC: UIViewController {
     var fetchRecord  = [UserModel]()
     
     @IBOutlet var tableView : UITableView!
-    
+    @IBOutlet var centerView : UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         fetchData()
     }
@@ -43,7 +44,7 @@ class DisplayDataVC: UIViewController {
             for obj in (data as? [NSManagedObject])!
             {
                 let firstName = obj.value(forKey: "firstname") as! String
-                let lastName = obj.value(forKey: "firstname") as! String
+                let lastName = obj.value(forKey: "lastname") as! String
                 
                 fetchRecord.append(UserModel.init(firstName , lastName))
             }
@@ -64,6 +65,8 @@ extension DisplayDataVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         cell.dataArray = fetchRecord[indexPath.row]
+        cell.mainView.dropShadow(color: .gray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+
         return cell
     }
 }

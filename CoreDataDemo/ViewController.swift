@@ -13,14 +13,25 @@ class ViewController: UIViewController {
     @IBOutlet var firstNameField : UITextField!
     @IBOutlet var lastnameField : UITextField!
     
+    @IBOutlet var searchField : UITextField!
+    @IBOutlet var searchLabel : UILabel!
+
+    @IBOutlet var centerView : UIView!
+    @IBOutlet var centerView2 : UIView!
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Test")
+        
+        setViewShadow(view_: centerView)
+        setViewShadow(view_: centerView2)
+
     }
     
     @IBAction func onClickSaveUserData()
     {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)
         
@@ -35,12 +46,39 @@ class ViewController: UIViewController {
         catch let err {
             print(err)
         }
-        
+    }
+    
+    @IBAction func onClickSearchRecord()
+    {
+        searchRecord(searchText: searchField.text!)
     }
     
     @IBAction func onClickShowUserData()
     {
         self.performSegue(withIdentifier: "DisplayDataVC", sender: nil)
+    }
+    
+    func searchRecord(searchText : String)
+    {
+        let managedObject = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate.init(format: "firstname = %@", searchText)
+        do{
+            let data = try! managedObject.fetch(fetchReq)
+
+            for obj in (data as? [NSManagedObject])!
+            {
+                let firstName = obj.value(forKey: "firstname") as! String
+                let lastName = obj.value(forKey: "lastname") as! String
+                searchLabel.text = firstName + " " + lastName
+            }
+        }
+        
+    }
+    
+    func setViewShadow(view_ : UIView)
+    {
+        view_.dropShadow(color: .gray, opacity: 0.3, offSet: CGSize(width: -0.5, height: 1), radius: 3, scale: true)
     }
 
 
