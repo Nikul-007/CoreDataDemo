@@ -15,9 +15,15 @@ class ViewController: UIViewController {
     
     @IBOutlet var searchField : UITextField!
     @IBOutlet var searchLabel : UILabel!
+    
+    @IBOutlet var nameToUpdateField : UITextField!
+    @IBOutlet var firstNameToUpdate : UITextField!
+    @IBOutlet var lastNameToUpdate : UITextField!
 
-    @IBOutlet var centerView : UIView!
-    @IBOutlet var centerView2 : UIView!
+
+    @IBOutlet var insertView : UIView!
+    @IBOutlet var searchView : UIView!
+    @IBOutlet var updateView : UIView!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -25,8 +31,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("Test")
         
-        setViewShadow(view_: centerView)
-        setViewShadow(view_: centerView2)
+        setViewShadow(view_: insertView)
+        setViewShadow(view_: searchView)
+        setViewShadow(view_: updateView)
 
     }
     
@@ -59,7 +66,11 @@ class ViewController: UIViewController {
         searchLabel.text = ""
         searchRecord(searchText: searchField.text!)
     }
-    
+    // Update RECORD
+      @IBAction func onClickUpdateRecord()
+      {
+          updateDataByName(searchText: nameToUpdateField.text!)
+      }
     // DELETE RECORD
     @IBAction func onClickDeleteRecord()
     {
@@ -90,6 +101,30 @@ class ViewController: UIViewController {
         }
         
     }
+    func updateDataByName(searchText : String)
+    {
+        let managedObject = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate.init(format: "firstname = %@", searchText)
+        
+        do{
+            let data = try! managedObject.fetch(fetchReq)
+            if data.count == 0{
+                print("Not found")
+                return
+            }
+            
+            let obj = data[0] as! NSManagedObject
+            obj.setValue(firstNameToUpdate.text, forKey: "firstname")
+            obj.setValue(lastNameToUpdate.text, forKey: "lastname")
+            
+            try? managedObject.save()
+            
+            firstNameToUpdate.text = ""
+            lastNameToUpdate.text = ""
+            nameToUpdateField.text = ""
+        }
+    }
     
     func searchRecord(searchText : String)
     {
@@ -100,6 +135,7 @@ class ViewController: UIViewController {
             let data = try! managedObject.fetch(fetchReq)
             if data.count == 0{
                 searchLabel.text = "Not Found"
+                return
             }
             for obj in (data as? [NSManagedObject])!
             {
