@@ -31,6 +31,7 @@ class DisplayDataVC: UIViewController {
         super.viewDidLoad()
         
         tableView.delegate = self
+        fetchData()
     }
     
     
