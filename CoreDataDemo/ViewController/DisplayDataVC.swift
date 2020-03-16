@@ -70,10 +70,10 @@ extension DisplayDataVC : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         cell.dataArray = fetchRecord[indexPath.row]
-        cell.mainView.dropShadow(color: .gray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
-
+        cell.mainView.setViewShadow( clr: .black)
         return cell
     }
 }

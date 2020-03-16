@@ -17,7 +17,6 @@
 		ECC77B3D241F4C7400F9AB08 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC77B3C241F4C7400F9AB08 /* SearchVC.swift */; };
 		ECEF9964241CB38A0022675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9963241CB38A0022675F /* AppDelegate.swift */; };
 		ECEF9966241CB38A0022675F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9965241CB38A0022675F /* SceneDelegate.swift */; };
-		ECEF9968241CB38A0022675F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF9967241CB38A0022675F /* ViewController.swift */; };
 		ECEF996B241CB38A0022675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECEF9969241CB38A0022675F /* Main.storyboard */; };
 		ECEF996E241CB38A0022675F /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECEF996C241CB38A0022675F /* CoreDataDemo.xcdatamodeld */; };
 		ECEF9970241CB38C0022675F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECEF996F241CB38C0022675F /* Assets.xcassets */; };
@@ -63,7 +62,6 @@
 		ECEF9960241CB38A0022675F /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEF9963241CB38A0022675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECEF9965241CB38A0022675F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECEF9967241CB38A0022675F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ECEF996A241CB38A0022675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECEF996D241CB38A0022675F /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
 		ECEF996F241CB38C0022675F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,10 +130,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EC5B8292241F5EC000DC56F6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EC9A0F30241DEC9100D5BFB0 /* avatar.png */,
+				ECC77B3A241F49E500F9AB08 /* Constant.swift */,
+				ECEF999A241D03260022675F /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		EC78D9BB241DDC4A005CA353 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ECEF9967241CB38A0022675F /* ViewController.swift */,
 				ECEF9996241CD64D0022675F /* DisplayDataVC.swift */,
 				ECC77B32241F48A600F9AB08 /* InsertDataVC.swift */,
 				ECC77B34241F48B300F9AB08 /* UpdateDataVC.swift */,
@@ -150,13 +157,6 @@
 				ECEF9998241CD6840022675F /* UserCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		ECC77B39241F49D800F9AB08 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		ECEF9957241CB38A0022675F = {
@@ -186,15 +186,12 @@
 			children = (
 				ECEF9963241CB38A0022675F /* AppDelegate.swift */,
 				ECEF9965241CB38A0022675F /* SceneDelegate.swift */,
-				ECC77B3A241F49E500F9AB08 /* Constant.swift */,
-				ECC77B39241F49D800F9AB08 /* New Group */,
+				EC5B8292241F5EC000DC56F6 /* Helper */,
 				EC78D9BB241DDC4A005CA353 /* ViewController */,
 				EC78D9BC241DDC5E005CA353 /* Cell */,
-				ECEF999A241D03260022675F /* Helper.swift */,
 				ECEF9969241CB38A0022675F /* Main.storyboard */,
 				ECEF996F241CB38C0022675F /* Assets.xcassets */,
 				ECEF9971241CB38C0022675F /* LaunchScreen.storyboard */,
-				EC9A0F30241DEC9100D5BFB0 /* avatar.png */,
 				ECEF9974241CB38C0022675F /* Info.plist */,
 				ECEF996C241CB38A0022675F /* CoreDataDemo.xcdatamodeld */,
 			);
@@ -460,7 +457,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC77B3D241F4C7400F9AB08 /* SearchVC.swift in Sources */,
-				ECEF9968241CB38A0022675F /* ViewController.swift in Sources */,
 				ECEF999B241D03260022675F /* Helper.swift in Sources */,
 				ECEF996E241CB38A0022675F /* CoreDataDemo.xcdatamodeld in Sources */,
 				ECEF9999241CD6840022675F /* UserCell.swift in Sources */,

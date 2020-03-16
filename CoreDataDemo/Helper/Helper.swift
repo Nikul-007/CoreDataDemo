@@ -38,7 +38,7 @@ extension UILabel {
 extension UIView {
     func setViewShadow(clr : UIColor)
     {
-        self.dropShadow(color: clr, opacity: 0.3, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+        self.dropShadow(color: clr, opacity: 0.3, offSet: CGSize(width: -1, height: 1), radius: 5, scale: true)
     }
   func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
     layer.masksToBounds = false
