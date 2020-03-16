@@ -8,9 +8,12 @@
 struct UserModel  {
     var firstName : String!
     var lastName : String!
-    init(_ fname : String,_ lname : String) {
+    var imageData : Data!
+
+    init(_ fname : String,_ lname : String, _ imgData : Data) {
         firstName = fname
         lastName = lname
+        imageData = imgData
     }
 }
 
@@ -45,8 +48,12 @@ class DisplayDataVC: UIViewController {
             {
                 let firstName = obj.value(forKey: "firstname") as! String
                 let lastName = obj.value(forKey: "lastname") as! String
-                
-                fetchRecord.append(UserModel.init(firstName , lastName))
+                var imageData = obj.value(forKey: "imagedata") as? Data
+                if imageData == nil
+                {
+                    imageData = UIImage.init(named: "avatar")?.pngData()
+                }
+                fetchRecord.append(UserModel.init(firstName , lastName, imageData!))
             }
         }
         tableView.reloadData()

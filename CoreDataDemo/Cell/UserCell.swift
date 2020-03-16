@@ -19,7 +19,7 @@ class UserCell: UITableViewCell {
         didSet{
             self.firstNameLabel.text = dataArray.firstName
             self.lastNameLabel.text = dataArray.lastName
-
+            self.avtarImageView.image = UIImage.init(data: dataArray.imageData)
         }
     }
     
