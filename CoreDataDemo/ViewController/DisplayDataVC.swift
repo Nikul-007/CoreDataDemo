@@ -3,7 +3,7 @@
 //  CoreDataDemo
 //
 //  Created by nikunj on 14/03/20.
-//  Copyright © 2020 Nikul. All rights reserved.
+//  Copyright © 2020 Nikul. All rights reserved..
 //
 struct UserModel  {
     var firstName : String!
