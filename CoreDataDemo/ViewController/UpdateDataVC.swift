@@ -46,13 +46,17 @@ class UpdateDataVC: UIViewController {
                obj.setValue(lastNameToUpdate.text, forKey: "lastname")
                
                try? managedObject.save()
+               resetTextField()
                
-               firstNameToUpdate.text = ""
-               lastNameToUpdate.text = ""
-               nameToUpdateField.text = ""
                self.statusLabel.text = "Record Updated"
 
            }
        }
+    func resetTextField()
+    {
+        firstNameToUpdate.text = ""
+        lastNameToUpdate.text = ""
+        nameToUpdateField.text = ""
+    }
 
 }

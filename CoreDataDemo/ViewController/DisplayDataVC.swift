@@ -5,17 +5,6 @@
 //  Created by nikunj on 14/03/20.
 //  Copyright © 2020 Nikul. All rights reserved..
 //
-struct UserModel  {
-    var firstName : String!
-    var lastName : String!
-    var imageData : Data!
-
-    init(_ fname : String,_ lname : String, _ imgData : Data) {
-        firstName = fname
-        lastName = lname
-        imageData = imgData
-    }
-}
 
 import UIKit
 import CoreData
